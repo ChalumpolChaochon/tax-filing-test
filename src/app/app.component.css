@@ -39,3 +39,19 @@
     max-width: 800px;
     margin: auto;
 }
+
+.step-input{
+    margin-top: 8px;
+    color: black;
+    width: max-content;
+    position: absolute;
+    left: -25px;
+}
+
+.step-reviews{
+    margin-top: 8px;
+    color: black;
+    width: max-content;
+    position: absolute;
+    left: -50px;
+}

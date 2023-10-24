@@ -1,0 +1,43 @@
+<div class="card border-dark mb-3">
+    <div class="card-body p-5">
+        <h5>1. Tax Filing Detail</h5>
+        <hr>
+        <div class="mb-5">
+            <app-filing-type #FilingTypeRadio [filingType]="items.filingType"
+                (reTurnFilingType)="focusTabDetailType($event)"></app-filing-type>
+        </div>
+        <div class="mb-5">
+            <div class="row gy-2">
+                <div class="col-md-7">
+                    <label class="form-label">VAT Month <span class="text-danger">*</span></label>
+                    <div class="row gy-2">
+                        <div class="col-md col-sm-12">
+                            <app-month #monthSelector [monthList]="monthList" [month]="items.month"></app-month>
+                        </div>
+                        <div class="col-md col-sm-12">
+                            <app-year #yearSelector [yearList]="yearList" [year]="items.year"></app-year>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col" *ngIf="items.filingType == '1'">
+                    <label class="form-label">Type <span class="text-danger">*</span></label>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <select class="form-select">
+                                <option selected>On-Time</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-sm-flex justify-content-between">
+            <h5>2. Tax Computation</h5>
+            <h5><u>View Exchange Rate</u></h5>
+        </div>
+        <hr>
+        <div class="fw-bold mb-3">Provide total taxable electronic service <span class="text-danger">*</span></div>
+        <ng-template switch-tab></ng-template>
+    </div>
+</div>

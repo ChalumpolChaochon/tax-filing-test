@@ -1,0 +1,7 @@
+<select class="form-select" [(ngModel)]="year" [ngClass]="{'is-invalid':submitted && !year}">
+    <option [value]="''">Choose Year</option>
+    <option *ngFor="let year of yearList; let index = index" [value]="year.value"> {{ year.label }}</option>
+</select>
+<div *ngIf="submitted && !year" class="invalid-feedback">
+    Invalid Data
+</div>

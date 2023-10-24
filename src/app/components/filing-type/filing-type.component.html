@@ -1,0 +1,14 @@
+<div class="form-label">Type of filing <span class="text-danger">*</span></div>
+<div class="form-check form-check-inline me-5">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" [(ngModel)]="filingType" [value]="'0'" (ngModelChange)="changeFilingType()"
+    [ngClass]="{'is-invalid':submitted && (filingType == '' || !filingType)}">
+    <label class="form-check-label" for="inlineRadio1">Ordinary Filing</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" [(ngModel)]="filingType" [value]="'1'" (ngModelChange)="changeFilingType()"
+  [ngClass]="{'is-invalid':submitted && (filingType == '' || !filingType)}">
+  <label class="form-check-label" for="inlineRadio2">Additional Filing</label>
+</div>
+<div *ngIf="submitted && (filingType == '' || !filingType)" class="invalid-feedback">
+  Invalid Data
+</div>

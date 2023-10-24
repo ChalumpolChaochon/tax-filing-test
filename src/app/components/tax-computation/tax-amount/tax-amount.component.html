@@ -1,0 +1,17 @@
+
+<div class="row mb-3">
+    <div class="col-md">
+        <label class="col-form-label" for="taxAmount">2. Total VAT to be remitted (7% of 1.)</label>
+    </div>
+    <div class="col-md-4">
+        <div class="input-group">
+            <input type="text" class="form-control" id="taxAmount" [(ngModel)]="taxAmount" currencyFormat
+            [ngClass]="{'is-invalid':submitted && !taxAmount}">
+            <span class="input-group-text">THB</span>
+            <div *ngIf="submitted && !taxAmount" class="invalid-feedback">
+                Invalid Data
+            </div>
+        </div>
+    </div>
+    
+</div>

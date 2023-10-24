@@ -1,0 +1,7 @@
+<select class="form-select" [(ngModel)]="month" [ngClass]="{'is-invalid':submitted && !month}">
+    <option [value]="''">Choose Month</option>
+    <option *ngFor="let m of monthList; let index = index" [value]="m.monthName"> {{ m.monthName }}</option>
+</select>
+<div *ngIf="submitted && !month" class="invalid-feedback">
+    Invalid Data
+</div>

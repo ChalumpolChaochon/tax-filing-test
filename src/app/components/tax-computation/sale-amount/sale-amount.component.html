@@ -1,0 +1,24 @@
+
+<div class="row mb-3">
+    <div class="col-md">
+        <label class="col-form-label" for="saleAmount">
+            <ng-container *ngIf="filingType == '0'">
+                1. Total value of taxable electronic exclusive of VAT
+            </ng-container>
+            <ng-container *ngIf="filingType == '1'">
+                1. Underdecleared Thai taxable electronic service
+            </ng-container>
+        </label>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="input-group">
+            <input type="text" class="form-control" id="saleAmount" [(ngModel)]="saleAmount" currencyFormat (blur)="onReTurn()"
+            [ngClass]="{'is-invalid':submitted && !saleAmount}">
+            <span class="input-group-text">THB</span>
+            <div *ngIf="submitted && !saleAmount" class="invalid-feedback">
+                Invalid Data
+            </div>
+        </div>
+    </div>
+</div>

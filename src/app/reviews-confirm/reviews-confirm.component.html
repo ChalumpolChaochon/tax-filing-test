@@ -1,0 +1,56 @@
+<div class="card border-dark mb-3">
+    <div class="card-body p-5">
+        <h5>Tax Filing Detail</h5>
+        <hr>
+        <div class="mb-5">
+            <div class="row">
+                <div class="col-md-3 col-sm-4 col fw-bold">
+                    Type of filing
+                </div>
+                <div class="col">
+                    {{items.filingType == '0'?'Ordinary Filing':'Additional Filing'}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-4 col fw-bold">
+                    VAT Month
+                </div>
+                <div class="col">
+                    {{items.month}} {{items.year}}
+                </div>
+            </div>
+        </div>
+        <h5>2. Tax Computation</h5>
+        <hr>
+        <div class="d-grid gap-3 mb-5 me-sm-5">
+            <div class="row">
+                <div class="col-sm col-12 fw-bold">
+                    Total value of taxable electronic service exclusive of VAT
+                </div>
+                <div class="col-sm-3 col text-end">
+                    {{items.saleAmount | number:'1.2-2'}} THB
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm col-12">
+                    <span class="fw-bold">Total VAT to be remitted</span><br>
+                    <small>(7% of Total value of taxable electronic service exclusive of VAT )</small>
+                </div>
+                <div class="col-sm-3 col text-end">
+                    {{items.taxAmount | number:'1.2-2'}} THB
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm col-12 fw-bold">
+                    Total Amount Payable
+                </div>
+                <div class="col-sm-3 col text-end fw-bold">
+                    {{items.totalAmount | number:'1.2-2'}} THB
+                </div>
+            </div>
+        </div>
+        <h5>2. Tax Computation</h5>
+        <hr>
+        <p>I hereby certity that information given above are true and correct and agree to be bound by such information.</p>
+    </div>
+</div>

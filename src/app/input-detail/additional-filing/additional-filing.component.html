@@ -1,0 +1,6 @@
+<app-sale-amount #saleAmount [filingType]="items.filingType" [saleAmount]="items.saleAmount" (returnSaleAmount)="getSaleAmount($event)"></app-sale-amount>
+<app-tax-amount #taxAmount [saleAmount]="items.saleAmount" (returnTaxAmount)="getTaxAmount($event)"></app-tax-amount>
+<div class="fw-bold mb-3">In Case of Late Filling and payment, or additional filling</div>
+<app-surcharge #surchargeCom [taxAmount]="items.taxAmount" (returnSurcharge)="getSurcharge($event)"></app-surcharge>
+<app-penalty #penaltyCom [penalty]="items.penalty"></app-penalty>
+<app-total-amount #totalAmountCom (returnTotalAmount)="getToTalAmount($event)" ></app-total-amount>
